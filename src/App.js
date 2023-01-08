@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import {useState, useEffect} from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App =()=>{
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight)
+    const [scrollX, setScrollX] = useState(document.clientX)
+    const [scrollY, setScrollY] = useState(document.clientY)
+
+    const sizeCheck = ()=>{
+        setWindowWidth(window.innerWidth)
+    }
+    const heightCheck = () => {
+        setWindowHeight(window.innerHeight)
+    }
+
+    const checkX = (e) =>{
+        setScrollX(e.clientX)
+        
+
+    } 
+
+    const checkY = (e) => {
+        setScrollY(e.clientY)
+        
+     
+    }
+
+    useEffect( () => {
+        window.addEventListener("resize", sizeCheck)
+        window.addEventListener("resize", heightCheck)
+        document.addEventListener("mousemove",checkX)
+        document.addEventListener("mousemove",checkY)
+        
+
+    })
+    return (
+        <div className="container">
+            <h1>React self-learning</h1>
+            <p>Hooks - useState a useEffect</p>
+            <h2>Šířka okna je </h2>{windowWidth}
+            <h2>Výška okna je </h2>{windowHeight}
+            <h2>Souřadnice</h2>
+            <p>X: {scrollX} Y: {scrollY}</p>
+        </div>
+    )
 }
 
-export default App;
+export default App
