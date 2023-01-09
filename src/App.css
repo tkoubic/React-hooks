@@ -1,3 +1,7 @@
+.main-c{
+    display: flex;
+    flex-direction: column;
+}
 .container {
     text-align: center;
 }

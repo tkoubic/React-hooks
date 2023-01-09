@@ -1,0 +1,32 @@
+body{
+    
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.container-iss{
+    margin-top: 50px;
+}
+.container-iss p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.container-iss span{
+    font-style: italic;
+}
+.btn-iss{
+    margin: 20px 0px;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    background-color: rgb(29, 6, 58);
+    color: rgba(255, 255, 255, 0.803);
+
+}
+.btn-iss:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    border:1px solid rgb(0, 0, 0);
+}

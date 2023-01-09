@@ -1,6 +1,7 @@
 import "./App.css"
 import {useState, useEffect} from "react"
-
+import ApiData from "./components/ApiData"
+import ApiIss from "./components/ApiIss"
 const App =()=>{
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -32,17 +33,29 @@ const App =()=>{
         window.addEventListener("resize", heightCheck)
         document.addEventListener("mousemove",checkX)
         document.addEventListener("mousemove",checkY)
+            return () => {
+
+                window.removeEventListener("resize", sizeCheck)
+                window.removeEventListener("resize", heightCheck)
+                document.removeEventListener("mousemove",checkX)
+                document.removeEventListener("mousemove",checkY)
+            }
         
 
-    })
+    },[])
     return (
-        <div className="container">
-            <h1>React self-learning</h1>
-            <p>Hooks - useState a useEffect</p>
-            <h2>Šířka okna je </h2>{windowWidth}
-            <h2>Výška okna je </h2>{windowHeight}
-            <h2>Souřadnice</h2>
-            <p>X: {scrollX} Y: {scrollY}</p>
+        <div className="main-c">
+            <div className="container">
+                <h1>React self-learning</h1>
+                <p>Hooks - useState a useEffect</p>
+                <h2>Šířka okna je </h2>{windowWidth}
+                <h2>Výška okna je </h2>{windowHeight}
+                <h2>Souřadnice</h2>
+                <p>X: {scrollX} Y: {scrollY}</p>
+                </div>
+        
+        <ApiData />
+        <ApiIss />
         </div>
     )
 }

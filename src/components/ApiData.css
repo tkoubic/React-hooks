@@ -1,0 +1,27 @@
+body{
+    display: grid;
+    place-items: center;
+}
+.api-container{
+    padding-top: 50px;
+    width: 400px;    
+    text-align: center;
+}
+.btn-hlasky{
+    
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    background-color: darkkhaki;
+    color: rgba(0, 0, 0, 0.803);
+
+}
+.btn-hlasky:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    border:1px solid rgb(0, 0, 0);
+}
+.cursive{
+    font-style: italic;
+}
